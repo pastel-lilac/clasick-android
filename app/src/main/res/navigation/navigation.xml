@@ -7,19 +7,24 @@
     <fragment
         android:id="@+id/navigation_playlist"
         android:name="com.pastel.lilac.clasick_android.playlist.PlaylistFragment"
-        android:label="@string/playlist"
         tools:layout="@layout/fragment_playlist">
+        <action
+            android:id="@+id/actionMusicFragment"
+            app:destination="@id/navigation_music" />
     </fragment>
     <fragment
         android:id="@+id/navigation_mymusic"
         android:name="com.pastel.lilac.clasick_android.mymusic.MyMusicFragment"
-        android:label="@string/mymusic"
         tools:layout="@layout/fragment_my_music">
     </fragment>
     <fragment
         android:id="@+id/navigation_search"
         android:name="com.pastel.lilac.clasick_android.search.SearchFragment"
-        android:label="@string/search"
+        tools:layout="@layout/fragment_search">
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_music"
+        android:name="com.pastel.lilac.clasick_android.music.MusicFragment"
         tools:layout="@layout/fragment_search">
     </fragment>
 </navigation>
