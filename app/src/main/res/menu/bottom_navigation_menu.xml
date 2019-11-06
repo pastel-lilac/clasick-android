@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:title="@string/playlist"
+        android:id="@+id/navigation_playlist"
+        android:icon="@drawable/ic_playlist"/>
+    <item android:title="@string/mymusic"
+        android:id="@+id/navigation_mymusic"
+        android:icon="@drawable/ic_music"/>
+    <item android:title="@string/search"
+        android:id="@+id/navigation_search"
+        android:icon="@drawable/ic_search"/>
+</menu>

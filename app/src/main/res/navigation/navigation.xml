@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/navigation_playlist">
+    <fragment
+        android:id="@+id/navigation_playlist"
+        android:name="com.pastel.lilac.clasick_android.playlist.PlaylistFragment"
+        android:label="@string/playlist"
+        tools:layout="@layout/fragment_playlist">
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_mymusic"
+        android:name="com.pastel.lilac.clasick_android.mymusic.MyMusicFragment"
+        android:label="@string/mymusic"
+        tools:layout="@layout/fragment_my_music">
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_search"
+        android:name="com.pastel.lilac.clasick_android.search.SearchFragment"
+        android:label="@string/search"
+        tools:layout="@layout/fragment_search">
+    </fragment>
+</navigation>
