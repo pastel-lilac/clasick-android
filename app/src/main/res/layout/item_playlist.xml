@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="playlist"
+            type="com.pastel.lilac.clasick_android.model.Playlist" />
+    </data>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:orientation="horizontal"
+        android:padding="16dp">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:imageUrl="@{playlist.coverPath}"
+            android:background="@drawable/rounded_corner_cover_image"
+            android:src="@drawable/ic_music">
+        </ImageView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{playlist.name}"
+            android:layout_gravity="center"
+            tools:text="playlist Name"
+            android:layout_marginLeft="8dp"
+            android:textSize="20sp">
+        </TextView>
+    </LinearLayout>
+</layout>
