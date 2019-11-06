@@ -3,10 +3,12 @@ package com.pastel.lilac.clasick_android.playlist
 import android.content.Context
 import android.net.Uri
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.DividerItemDecoration
@@ -19,7 +21,11 @@ import com.xwray.groupie.GroupieViewHolder
 import kotlinx.android.synthetic.main.fragment_playlist.*
 import java.sql.Driver
 
-class PlaylistFragment : Fragment() {
+class PlaylistFragment : Fragment(), PlaylistClickListener {
+    override fun onPlaylistClicked(v: View) {
+        Toast.makeText(context, "dsdfdsa", Toast.LENGTH_SHORT).show()
+    }
+
     private lateinit var viewModel: PlaylistViewModel
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
