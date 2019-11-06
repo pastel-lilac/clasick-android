@@ -9,5 +9,5 @@ interface ClasickApi {
     suspend fun getPlayList(): List<Playlist>
 
     @GET("musics")
-    suspend fun getMusic(): Music
+    suspend fun getMusic(): List<Music>
 }

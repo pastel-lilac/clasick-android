@@ -18,7 +18,7 @@ class ClasickRepository(baseURL: String) : ClasickApi {
         return apiClient.getPlayList()
     }
 
-    override suspend fun getMusic(): Music {
+    override suspend fun getMusic(): List<Music> {
         return apiClient.getMusic()
     }
 
