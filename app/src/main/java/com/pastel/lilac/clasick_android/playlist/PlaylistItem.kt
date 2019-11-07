@@ -1,5 +1,6 @@
 package com.pastel.lilac.clasick_android.playlist
 
+import android.view.View
 import com.pastel.lilac.clasick_android.R
 import com.pastel.lilac.clasick_android.databinding.ItemPlaylistBinding
 import com.pastel.lilac.clasick_android.model.Playlist
@@ -17,12 +18,4 @@ class PlaylistItem(private val playlist: Playlist) : BindableItem<ItemPlaylistBi
             Timber.d("click")
         }
     }
-
-    override fun bind(viewHolder: GroupieViewHolder<ItemPlaylistBinding>, position: Int) {
-        super.bind(viewHolder, position)
-        viewHolder.itemView.setOnClickListener {
-            Timber.d("dsasadas")
-        }
-    }
-
 }
