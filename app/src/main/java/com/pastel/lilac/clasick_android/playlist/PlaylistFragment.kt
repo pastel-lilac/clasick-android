@@ -10,6 +10,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.os.bundleOf
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.Navigation
@@ -17,6 +18,8 @@ import androidx.navigation.fragment.FragmentNavigatorDestinationBuilder
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.bumptech.glide.Glide
+import com.bumptech.glide.load.engine.DiskCacheStrategy
 
 import com.pastel.lilac.clasick_android.R
 import com.pastel.lilac.clasick_android.model.Playlist
@@ -80,8 +83,14 @@ class PlaylistFragment : Fragment() {
         }
     }
 
-    private val onItemClickListener = OnItemClickListener { item, _ ->
-        Timber.d("yahooooooooo")
+    private val onItemClickListener = OnItemClickListener { item, view ->
+        val index = this.groupAdapter.getAdapterPosition(item)
+        val coverPath = viewModel.playlists.value!![index].coverPath
+        Timber.d(coverPath)
+        Glide.with(this)
+            .load(coverPath)
+            .diskCacheStrategy(DiskCacheStrategy.ALL)
+        val bundle = bundleOf()
         findNavController().navigate(R.id.actionMusicFragment)
     }
 }

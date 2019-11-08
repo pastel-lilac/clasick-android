@@ -11,6 +11,11 @@
         <action
             android:id="@+id/actionMusicFragment"
             app:destination="@id/musicFragment" />
+<!--        <argument-->
+<!--            android:name="imgpath"-->
+<!--            app:argType="String"-->
+<!--            android:defaultValue="default">-->
+<!--        </argument>-->
     </fragment>
     <fragment
         android:id="@+id/navigation_mymusic"
