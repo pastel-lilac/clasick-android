@@ -19,7 +19,13 @@ class PlaylistViewModel(application: Application) : AndroidViewModel(application
     fun fetchRemote() {
         scope.launch {
             try {
-                playlists.value = api.getPlayList()
+                val result =  api.getPlayList()
+                when(playlists.value?.size) {
+                    0 -> playlists.value = result
+                    result.size -> {
+                    }
+                    else -> playlists.value = result
+                }
             } catch (e: Exception) {
                 e.stackTrace
             }

@@ -63,7 +63,8 @@ class PlaylistFragment : Fragment() {
 
     private fun initRecyclerView(playlistItem: List<PlaylistItem>) {
         groupAdapter.apply {
-            addAll(playlistItem)
+            // update by new value = previous value reset
+            update(playlistItem)
             setOnItemClickListener(onItemClickListener)
         }
         playlistRecyclerView.apply {
