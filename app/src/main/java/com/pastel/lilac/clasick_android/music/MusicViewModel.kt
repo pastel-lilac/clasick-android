@@ -12,23 +12,21 @@ import com.pastel.lilac.clasick_android.repository.ClasickRepository
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import timber.log.Timber
 import java.lang.Exception
 
 class MusicViewModel(application: Application) : AndroidViewModel(application) {
-    var music = MutableLiveData<List<Music>>()
+    var musics = MutableLiveData<List<Music>>()
     private val api = ClasickRepository(application.applicationContext.getString(R.string.BASE_URL))
     private val scope = CoroutineScope(Dispatchers.Main)
     fun fetchRemote() {
         scope.launch {
             try {
-                music.value = api.getMusic()
-                Log.d("TAG", music.value.toString())
+                musics.value = api.getMusic()
+                //Timber.d(musics.value.toString())
             } catch (e: Exception) {
                 e.stackTrace
-                Log.d("TAGTAG", e.toString())
             }
         }
-    }
-    fun update(newMusic: List<Music>) {
     }
 }

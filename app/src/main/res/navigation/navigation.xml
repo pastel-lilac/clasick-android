@@ -10,26 +10,24 @@
         tools:layout="@layout/fragment_playlist">
         <action
             android:id="@+id/actionMusicFragment"
-            app:destination="@id/musicFragment" />
-<!--        <argument-->
-<!--            android:name="imgpath"-->
-<!--            app:argType="String"-->
-<!--            android:defaultValue="default">-->
-<!--        </argument>-->
+            app:destination="@id/musicFragment"></action>
     </fragment>
     <fragment
         android:id="@+id/navigation_mymusic"
         android:name="com.pastel.lilac.clasick_android.mymusic.MyMusicFragment"
-        tools:layout="@layout/fragment_my_music">
-    </fragment>
+        tools:layout="@layout/fragment_my_music"></fragment>
     <fragment
         android:id="@+id/navigation_search"
         android:name="com.pastel.lilac.clasick_android.search.SearchFragment"
-        tools:layout="@layout/fragment_search">
-    </fragment>
+        tools:layout="@layout/fragment_search"></fragment>
     <fragment
         android:id="@+id/musicFragment"
         android:name="com.pastel.lilac.clasick_android.music.MusicFragment"
         android:label="fragment_music"
-        tools:layout="@layout/fragment_music" />
+        tools:layout="@layout/fragment_music">
+        <argument
+            android:name="coverPath"
+            android:defaultValue="defaultCoverPath"
+            app:argType="string"></argument>
+    </fragment>
 </navigation>

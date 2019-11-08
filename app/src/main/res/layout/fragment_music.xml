@@ -9,11 +9,12 @@
     </data>
 
     <TextView
+        android:id="@+id/description"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:text="@{music.description}"
         android:gravity="center"
         android:textSize="30sp"
-        tools:text="title"/>
+        tools:text="description"/>
 
 </layout>

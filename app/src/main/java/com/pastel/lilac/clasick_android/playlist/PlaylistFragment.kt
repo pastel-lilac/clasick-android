@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.Toast
 import androidx.core.os.bundleOf
 import androidx.lifecycle.Observer
@@ -33,7 +34,7 @@ import java.sql.Driver
 
 class PlaylistFragment : Fragment() {
 
-    private val groupAdapter = GroupAdapter<GroupieViewHolder>()
+    private val playlistAdapter = GroupAdapter<GroupieViewHolder>()
 
 //    override fun onPlaylistClicked(v: View) {
 //        groupAdapter.apply {
@@ -65,7 +66,7 @@ class PlaylistFragment : Fragment() {
     }
 
     private fun initRecyclerView(playlistItem: List<PlaylistItem>) {
-        groupAdapter.apply {
+        playlistAdapter.apply {
             // update by new value = previous value reset
             update(playlistItem)
             setOnItemClickListener(onItemClickListener)
@@ -73,7 +74,7 @@ class PlaylistFragment : Fragment() {
         playlistRecyclerView.apply {
             layoutManager = LinearLayoutManager(context)
             setHasFixedSize(true)
-            adapter = groupAdapter
+            adapter = playlistAdapter
         }
     }
 
@@ -84,13 +85,16 @@ class PlaylistFragment : Fragment() {
     }
 
     private val onItemClickListener = OnItemClickListener { item, view ->
-        val index = this.groupAdapter.getAdapterPosition(item)
+        val index = this.playlistAdapter.getAdapterPosition(item)
+        val coverImage = requireActivity().findViewById<ImageView>(R.id.cover_image_view)
         val coverPath = viewModel.playlists.value!![index].coverPath
-        Timber.d(coverPath)
         Glide.with(this)
             .load(coverPath)
             .diskCacheStrategy(DiskCacheStrategy.ALL)
-        val bundle = bundleOf()
-        findNavController().navigate(R.id.actionMusicFragment)
+            .into(coverImage)
+        val action = PlaylistFragmentDirections.actionMusicFragment()
+        action.coverPath = coverPath
+        Navigation.findNavController(activity!!, R.id.nav_host_fragment).navigate(action)
+//        findNavController().navigate(R.id.actionMusicFragment)
     }
 }
