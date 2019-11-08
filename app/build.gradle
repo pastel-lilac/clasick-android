@@ -36,6 +36,7 @@ def retrofitVersion = '2.6.0'
 def moshiVersion = '1.8.0'
 def groupieVersion = '2.7.0'
 def glideVersion = '4.9.0'
+def archLifecycleVersion = '2.1.0'
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
@@ -81,4 +82,7 @@ dependencies {
 
     // timber
     implementation 'com.jakewharton.timber:timber:4.7.1'
+
+    // to create lifecycleOwner
+    implementation "androidx.lifecycle:lifecycle-extensions:$archLifecycleVersion"
 }

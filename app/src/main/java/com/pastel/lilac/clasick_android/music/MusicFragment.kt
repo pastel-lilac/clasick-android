@@ -9,6 +9,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.bumptech.glide.Glide
+import com.pastel.lilac.clasick_android.BR
 
 import com.pastel.lilac.clasick_android.R
 import com.pastel.lilac.clasick_android.databinding.FragmentMusicBinding
@@ -25,12 +26,12 @@ class MusicFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        this.binding = DataBindingUtil.inflate<FragmentMusicBinding>(layoutInflater, R.layout.fragment_music, container, false)
+        this.binding = DataBindingUtil.inflate(inflater, R.layout.fragment_music, container, false)
         viewModel = ViewModelProviders.of(this).get(MusicViewModel::class.java)
         this.observeViewModel()
         val coverPath = MusicFragmentArgs.fromBundle(arguments!!).coverPath
 //        val glideCache = Glide.with(this)
-        return binding.root
+        return inflater.inflate(R.layout.fragment_music, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -40,7 +41,9 @@ class MusicFragment : Fragment() {
 
     private fun observeViewModel() {
         viewModel.musics.observe(this, Observer {
-            this.binding.setVariable(androidx.databinding.library.baseAdapters.BR.music, it)
+            Timber.d(it[0].toString()) // itに値来てる
+            this.binding.music = it[0]
+//            this.binding.setVariable(androidx.databinding.library.baseAdapters.BR.musicuu, it)
         })
     }
 }
