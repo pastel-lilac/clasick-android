@@ -10,7 +10,7 @@
         tools:layout="@layout/fragment_playlist">
         <action
             android:id="@+id/actionMusicFragment"
-            app:destination="@id/navigation_music" />
+            app:destination="@id/musicFragment" />
     </fragment>
     <fragment
         android:id="@+id/navigation_mymusic"
@@ -23,8 +23,8 @@
         tools:layout="@layout/fragment_search">
     </fragment>
     <fragment
-        android:id="@+id/navigation_music"
+        android:id="@+id/musicFragment"
         android:name="com.pastel.lilac.clasick_android.music.MusicFragment"
-        tools:layout="@layout/fragment_search">
-    </fragment>
+        android:label="fragment_music"
+        tools:layout="@layout/fragment_music" />
 </navigation>

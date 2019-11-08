@@ -14,6 +14,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.FragmentNavigatorDestinationBuilder
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 
@@ -80,7 +81,6 @@ class PlaylistFragment : Fragment() {
 
     private val onItemClickListener = OnItemClickListener { item, _ ->
         Timber.d("yahooooooooo")
-        val fragment = MusicFragment()
-        requireActivity().supportFragmentManager.beginTransaction().replace(R.id.nav_host_fragment, fragment).commit()
+        findNavController().navigate(R.id.actionMusicFragment)
     }
 }

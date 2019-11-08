@@ -20,7 +20,6 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:imageUrl="@{playlist.coverPath}"
-            android:background="@drawable/rounded_corner_cover_image"
             android:src="@drawable/ic_music">
         </ImageView>
         <TextView
