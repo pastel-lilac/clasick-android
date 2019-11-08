@@ -22,14 +22,20 @@ import com.pastel.lilac.clasick_android.model.Playlist
 import com.pastel.lilac.clasick_android.music.MusicFragment
 import com.xwray.groupie.GroupAdapter
 import com.xwray.groupie.GroupieViewHolder
+import com.xwray.groupie.OnItemClickListener
 import kotlinx.android.synthetic.main.fragment_playlist.*
+import timber.log.Timber
 import java.sql.Driver
 
-class PlaylistFragment : Fragment(), PlaylistClickListener {
-    override fun onPlaylistClicked(v: View) {
-        val fragment = MusicFragment()
-        requireActivity().supportFragmentManager.beginTransaction().replace(R.id.nav_host_fragment, fragment).commit()
-    }
+class PlaylistFragment : Fragment() {
+
+    private val groupAdapter = GroupAdapter<GroupieViewHolder>()
+
+//    override fun onPlaylistClicked(v: View) {
+//        groupAdapter.apply {
+//            setOnItemClickListener(onItemClickListener)
+//        }
+//    }
 
     private lateinit var viewModel: PlaylistViewModel
     override fun onCreateView(
@@ -55,13 +61,14 @@ class PlaylistFragment : Fragment(), PlaylistClickListener {
     }
 
     private fun initRecyclerView(playlistItem: List<PlaylistItem>) {
-        val pAdapter = GroupAdapter<GroupieViewHolder>().apply {
+        groupAdapter.apply {
             addAll(playlistItem)
+            setOnItemClickListener(onItemClickListener)
         }
         playlistRecyclerView.apply {
             layoutManager = LinearLayoutManager(context)
             setHasFixedSize(true)
-            adapter = pAdapter
+            adapter = groupAdapter
         }
     }
 
@@ -69,5 +76,11 @@ class PlaylistFragment : Fragment(), PlaylistClickListener {
         return this.map {
             PlaylistItem(it)
         }
+    }
+
+    private val onItemClickListener = OnItemClickListener { item, _ ->
+        Timber.d("yahooooooooo")
+        val fragment = MusicFragment()
+        requireActivity().supportFragmentManager.beginTransaction().replace(R.id.nav_host_fragment, fragment).commit()
     }
 }

@@ -14,8 +14,5 @@ class PlaylistItem(private val playlist: Playlist) : BindableItem<ItemPlaylistBi
 
     override fun bind(viewBinding: ItemPlaylistBinding, position: Int) {
         viewBinding.playlist = playlist
-        viewBinding.playListItem.setOnClickListener {
-            Timber.d("click")
-        }
     }
 }
