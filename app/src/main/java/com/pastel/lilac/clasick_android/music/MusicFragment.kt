@@ -1,10 +1,12 @@
 package com.pastel.lilac.clasick_android.music
 
+import android.media.Image
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
@@ -13,6 +15,7 @@ import com.pastel.lilac.clasick_android.BR
 
 import com.pastel.lilac.clasick_android.R
 import com.pastel.lilac.clasick_android.databinding.FragmentMusicBinding
+import kotlinx.android.synthetic.main.fragment_music.*
 import timber.log.Timber
 
 class MusicFragment : Fragment() {
@@ -29,8 +32,17 @@ class MusicFragment : Fragment() {
         this.binding = DataBindingUtil.inflate(inflater, R.layout.fragment_music, container, false)
         viewModel = ViewModelProviders.of(this).get(MusicViewModel::class.java)
         this.observeViewModel()
-        val coverPath = MusicFragmentArgs.fromBundle(arguments!!).coverPath
-//        val glideCache = Glide.with(this)
+        var coverPath: String? = null
+//        val coverImageView = requireActivity().findViewById<ImageView>(R.id.coverImageView)
+        arguments?.let {
+            coverPath = MusicFragmentArgs.fromBundle(it).coverPath
+            coverImageView?.let {
+                Glide.with(this)
+                    .load(coverPath)
+                    .onlyRetrieveFromCache(false)
+                    .into(it)
+            }
+        }
         return inflater.inflate(R.layout.fragment_music, container, false)
     }
 
