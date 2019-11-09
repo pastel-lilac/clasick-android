@@ -29,11 +29,13 @@ class MusicFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        this.binding = DataBindingUtil.inflate(inflater, R.layout.fragment_music, container, false)
+//        this.binding = DataBindingUtil.inflate(inflater, R.layout.fragment_music, container, false)
+        val view = inflater.inflate(R.layout.fragment_music, container, false)
+        this.binding = FragmentMusicBinding.bind(view)
         viewModel = ViewModelProviders.of(this).get(MusicViewModel::class.java)
         this.observeViewModel()
         var coverPath: String? = null
-//        val coverImageView = requireActivity().findViewById<ImageView>(R.id.coverImageView)
+        val coverImageView = requireActivity().findViewById<ImageView>(R.id.coverImageView)
         arguments?.let {
             coverPath = MusicFragmentArgs.fromBundle(it).coverPath
             coverImageView?.let {
@@ -43,7 +45,8 @@ class MusicFragment : Fragment() {
                     .into(it)
             }
         }
-        return inflater.inflate(R.layout.fragment_music, container, false)
+//        return inflater.inflate(R.layout.fragment_music, container, false)
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -54,8 +57,8 @@ class MusicFragment : Fragment() {
     private fun observeViewModel() {
         viewModel.musics.observe(this, Observer {
             Timber.d(it[0].toString()) // itに値来てる
-            this.binding.music = it[0]
-//            this.binding.setVariable(androidx.databinding.library.baseAdapters.BR.musicuu, it)
+//            this.binding.setVariable(BR.music, it)
+            binding.music = it[0]
         })
     }
 }

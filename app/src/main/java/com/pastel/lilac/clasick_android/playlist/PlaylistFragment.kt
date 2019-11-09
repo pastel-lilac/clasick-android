@@ -95,6 +95,5 @@ class PlaylistFragment : Fragment() {
         val action = PlaylistFragmentDirections.actionMusicFragment()
         action.coverPath = coverPath
         Navigation.findNavController(activity!!, R.id.nav_host_fragment).navigate(action)
-//        findNavController().navigate(R.id.actionMusicFragment)
     }
 }
