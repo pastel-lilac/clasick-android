@@ -92,7 +92,7 @@ class PlaylistFragment : Fragment() {
             .load(coverPath)
             .diskCacheStrategy(DiskCacheStrategy.ALL)
             .into(coverImage)
-        val action = PlaylistFragmentDirections.actionMusicFragment()
+        val action = PlaylistFragmentDirections.actionMusicListFragment()
         action.coverPath = coverPath
         Navigation.findNavController(activity!!, R.id.nav_host_fragment).navigate(action)
     }

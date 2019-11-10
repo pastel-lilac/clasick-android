@@ -9,8 +9,8 @@
         android:name="com.pastel.lilac.clasick_android.playlist.PlaylistFragment"
         tools:layout="@layout/fragment_playlist">
         <action
-            android:id="@+id/actionMusicFragment"
-            app:destination="@id/musicFragment"></action>
+            android:id="@+id/actionMusicListFragment"
+            app:destination="@id/musicListFragment" />
     </fragment>
     <fragment
         android:id="@+id/navigation_mymusic"
@@ -25,6 +25,19 @@
         android:name="com.pastel.lilac.clasick_android.music.MusicFragment"
         android:label="fragment_music"
         tools:layout="@layout/fragment_music">
+        <argument
+            android:name="coverPath"
+            android:defaultValue="defaultCoverPath"
+            app:argType="string"></argument>
+    </fragment>
+    <fragment
+        android:id="@+id/musicListFragment"
+        android:name="com.pastel.lilac.clasick_android.musiclist.MusicListFragment"
+        android:label="fragment_music_list"
+        tools:layout="@layout/fragment_music_list" >
+        <action
+            android:id="@+id/actionMusicFragment"
+            app:destination="@id/musicFragment" />
         <argument
             android:name="coverPath"
             android:defaultValue="defaultCoverPath"

@@ -13,7 +13,6 @@ import com.bumptech.glide.Glide
 
 import com.pastel.lilac.clasick_android.R
 import com.pastel.lilac.clasick_android.databinding.FragmentMusicBinding
-import timber.log.Timber
 
 class MusicFragment : Fragment() {
     private lateinit var viewModel: MusicViewModel
