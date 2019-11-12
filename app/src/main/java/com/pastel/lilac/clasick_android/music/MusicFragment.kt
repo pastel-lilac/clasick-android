@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.fragment.navArgs
@@ -25,6 +26,7 @@ class MusicFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_music, container, false)
         this.binding = FragmentMusicBinding.bind(view)
         viewModel = ViewModelProviders.of(this).get(MusicViewModel::class.java)
+        (activity as AppCompatActivity).supportActionBar?.hide()
         this.observeViewModel()
         return binding.root
     }
@@ -41,6 +43,12 @@ class MusicFragment : Fragment() {
             .into(coverImageView)
 
     }
+
+//    override fun onActivityCreated(savedInstanceState: Bundle?) {
+//        super.onActivityCreated(savedInstanceState)
+//        // hide actionbar in this fragment
+//        (activity as AppCompatActivity).supportActionBar?.hide()
+//    }
 
     private fun observeViewModel() {
         viewModel.musics.observe(this, Observer {
