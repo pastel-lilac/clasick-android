@@ -1,12 +1,9 @@
 package com.pastel.lilac.clasick_android.playlist
 
-import android.view.View
 import com.pastel.lilac.clasick_android.R
 import com.pastel.lilac.clasick_android.databinding.ItemPlaylistBinding
-import com.pastel.lilac.clasick_android.model.Playlist
+import com.pastel.lilac.clasick_android.entity.Playlist
 import com.xwray.groupie.databinding.BindableItem
-import com.xwray.groupie.databinding.GroupieViewHolder
-import timber.log.Timber
 
 class PlaylistItem(private val playlist: Playlist) : BindableItem<ItemPlaylistBinding>() {
 

@@ -1,18 +1,14 @@
 package com.pastel.lilac.clasick_android.music
 
 import android.app.Application
-import android.util.Log
-import androidx.databinding.BindingAdapter
-import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
 import com.pastel.lilac.clasick_android.R
-import com.pastel.lilac.clasick_android.model.Music
-import com.pastel.lilac.clasick_android.repository.ClasickRepository
+import com.pastel.lilac.clasick_android.adapters.gateway.interfaces.ClasickRepository
+import com.pastel.lilac.clasick_android.entity.Music
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import timber.log.Timber
 import java.lang.Exception
 
 class MusicViewModel(application: Application) : AndroidViewModel(application) {

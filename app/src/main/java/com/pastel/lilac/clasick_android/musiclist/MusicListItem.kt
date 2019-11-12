@@ -2,7 +2,7 @@ package com.pastel.lilac.clasick_android.musiclist
 
 import com.pastel.lilac.clasick_android.R
 import com.pastel.lilac.clasick_android.databinding.ItemMusiclistBinding
-import com.pastel.lilac.clasick_android.model.Music
+import com.pastel.lilac.clasick_android.entity.Music
 import com.xwray.groupie.databinding.BindableItem
 
 class MusicListItem(private val musiclist: Music) : BindableItem<ItemMusiclistBinding>() {

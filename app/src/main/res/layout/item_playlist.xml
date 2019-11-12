@@ -4,7 +4,7 @@
     <data>
         <variable
             name="playlist"
-            type="com.pastel.lilac.clasick_android.model.Playlist" />
+            type="com.pastel.lilac.clasick_android.entity.Playlist" />
         <variable
             name="listener"
             type="com.pastel.lilac.clasick_android.playlist.PlaylistClickListener" />

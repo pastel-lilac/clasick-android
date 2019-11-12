@@ -8,19 +8,16 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
-import androidx.navigation.NavArgs
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.bumptech.glide.Glide
 import com.pastel.lilac.clasick_android.R
-import com.pastel.lilac.clasick_android.model.Music
+import com.pastel.lilac.clasick_android.entity.Music
 import com.xwray.groupie.GroupAdapter
 import com.xwray.groupie.GroupieViewHolder
 import com.xwray.groupie.OnItemClickListener
 import kotlinx.android.synthetic.main.fragment_music_list.*
-import timber.log.Timber
 
 class MusicListFragment : Fragment() {
 

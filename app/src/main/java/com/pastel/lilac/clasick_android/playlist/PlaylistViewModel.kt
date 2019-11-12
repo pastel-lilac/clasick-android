@@ -4,8 +4,8 @@ import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
 import com.pastel.lilac.clasick_android.R
-import com.pastel.lilac.clasick_android.model.Playlist
-import com.pastel.lilac.clasick_android.repository.ClasickRepository
+import com.pastel.lilac.clasick_android.adapters.gateway.interfaces.ClasickRepository
+import com.pastel.lilac.clasick_android.entity.Playlist
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch

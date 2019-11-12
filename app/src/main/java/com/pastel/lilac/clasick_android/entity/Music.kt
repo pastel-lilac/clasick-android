@@ -1,4 +1,4 @@
-package com.pastel.lilac.clasick_android.model
+package com.pastel.lilac.clasick_android.entity
 
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass

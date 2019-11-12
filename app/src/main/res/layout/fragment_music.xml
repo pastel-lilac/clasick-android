@@ -6,7 +6,7 @@
     <data>
         <variable
             name="music"
-            type="com.pastel.lilac.clasick_android.model.Music" />
+            type="com.pastel.lilac.clasick_android.entity.Music" />
     </data>
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"

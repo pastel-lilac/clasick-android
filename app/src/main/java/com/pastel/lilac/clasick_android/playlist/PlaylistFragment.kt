@@ -1,36 +1,25 @@
 package com.pastel.lilac.clasick_android.playlist
 
-import android.content.Context
-import android.net.Uri
 import android.os.Bundle
-import android.text.Layout
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
-import android.widget.Toast
-import androidx.core.os.bundleOf
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.Navigation
-import androidx.navigation.fragment.FragmentNavigatorDestinationBuilder
-import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 
 import com.pastel.lilac.clasick_android.R
-import com.pastel.lilac.clasick_android.model.Playlist
-import com.pastel.lilac.clasick_android.music.MusicFragment
+import com.pastel.lilac.clasick_android.entity.Playlist
 import com.xwray.groupie.GroupAdapter
 import com.xwray.groupie.GroupieViewHolder
 import com.xwray.groupie.OnItemClickListener
 import kotlinx.android.synthetic.main.fragment_playlist.*
-import timber.log.Timber
-import java.sql.Driver
 
 class PlaylistFragment : Fragment() {
 
