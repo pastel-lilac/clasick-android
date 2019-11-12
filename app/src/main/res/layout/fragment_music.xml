@@ -36,12 +36,12 @@
             app:layout_constraintTop_toBottomOf="@+id/coverImageView"
             tools:text="Music Title" />
 
-        <ImageButton
+        <androidx.appcompat.widget.AppCompatImageButton
             android:id="@+id/playButton"
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:layout_marginTop="48dp"
-            android:background="#00000000"
+            android:background="@drawable/ripple"
             android:scaleType="centerCrop"
             android:src="@drawable/ic_play_arrow"
             app:layout_constraintEnd_toEndOf="parent"
