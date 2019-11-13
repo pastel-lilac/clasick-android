@@ -85,4 +85,6 @@ dependencies {
 
     // to create lifecycleOwner
     implementation "androidx.lifecycle:lifecycle-extensions:$archLifecycleVersion"
+
+    implementation 'com.google.android.exoplayer:exoplayer:2.10.7'
 }
