@@ -76,13 +76,13 @@ class PlaylistFragment : Fragment() {
     private val onItemClickListener = OnItemClickListener { item, view ->
         val index = this.playlistAdapter.getAdapterPosition(item)
         val coverImage = requireActivity().findViewById<ImageView>(R.id.cover_image_view)
-        val coverPath = viewModel.playlists.value!![index].coverPath
+        val coverPath = viewModel.playlists.value?.get(index)?.coverPath ?: return@OnItemClickListener
         Glide.with(this)
             .load(coverPath)
             .diskCacheStrategy(DiskCacheStrategy.ALL)
             .into(coverImage)
         val action = PlaylistFragmentDirections.actionMusicListFragment()
         action.coverPath = coverPath
-        Navigation.findNavController(activity!!, R.id.nav_host_fragment).navigate(action)
+        Navigation.findNavController(requireActivity(), R.id.nav_host_fragment).navigate(action)
     }
 }

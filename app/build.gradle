@@ -13,7 +13,7 @@ android {
     buildToolsVersion "29.0.2"
     defaultConfig {
         applicationId "com.pastel.lilac.clasick_android"
-        minSdkVersion 21
+        minSdkVersion 26
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
@@ -86,5 +86,9 @@ dependencies {
     // to create lifecycleOwner
     implementation "androidx.lifecycle:lifecycle-extensions:$archLifecycleVersion"
 
+    // exoplayer
     implementation 'com.google.android.exoplayer:exoplayer:2.10.7'
+
+    // motionlayout
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.0-beta3'
 }

@@ -13,7 +13,7 @@ import java.lang.Exception
 
 class MusicListViewModel(application: Application) : AndroidViewModel(application) {
     var musics = MutableLiveData<List<Music>>()
-    private val api = ClasickRepository(application.applicationContext.getString(R.string.BASE_URL))
+    private val api = ClasickRepository( application.applicationContext.getString(R.string.BASE_URL))
     private val scope = CoroutineScope(Dispatchers.Main)
     private val pref = getApplication<Application>()
     fun fetchRemote() {
